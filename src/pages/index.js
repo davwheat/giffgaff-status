@@ -4,7 +4,7 @@ import Layout from '../components/Templates/Layout'
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle={null}>
+    <Layout pageTitle={'giffgaff status'}>
       <main>
         <h1 className="gg-t-megaphone">giffgaff status</h1>
         <p className="gg-t-speak">

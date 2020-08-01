@@ -2,16 +2,32 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import getDiscussionSeverity from '../../utils/getDiscussionSeverity'
+import severityToText from '../../utils/severityToText'
+
+import styles from './styles/StatusTable.module.css'
 
 export default function StatusTable({ serviceIssueDiscussions }) {
+  let issueList = serviceIssueDiscussions.reduce((arr, issue) => {
+    return [...arr, { id: issue.id, title: issue.attributes.title, severity: getDiscussionSeverity(issue) }]
+  }, [])
+
+  issueList.sort((a, b) => b.severity - a.severity)
+
   return (
-    <section>
+    <section className={styles.container}>
       <ul>
-        {serviceIssueDiscussions.map(issue => (
-          <li key={issue.id}>
-            <p>{issue.attributes.title}</p>
-            <p>Thread ID: {issue.id}</p>
-            <p>Severity: {getDiscussionSeverity(issue)}</p>
+        {issueList.map(issue => (
+          <li data-severity={issue.severity} className={styles.listItem} key={issue.id}>
+            <a
+              className={styles.item}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://community.giffgaff.com/d/${issue.id}?utm_source=giffgaffstatus_com_mrjeeves`}
+            >
+              <h1 className="gg-t-speak-up">{issue.title}</h1>
+              {/* <p>Thread ID: {issue.id}</p> */}
+              <p>{severityToText(issue.severity)}</p>
+            </a>
           </li>
         ))}
       </ul>
