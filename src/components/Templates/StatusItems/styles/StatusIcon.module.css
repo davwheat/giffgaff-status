@@ -1,0 +1,15 @@
+.green {
+  background-color: #0bd91c;
+}
+.red {
+  background-color: #ba0a0a;
+}
+.amber {
+  background-color: #e95c0a;
+}
+.statusIcon {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #000;
+}

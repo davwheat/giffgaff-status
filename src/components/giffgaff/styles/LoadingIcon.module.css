@@ -1,0 +1,29 @@
+.spinner {
+  appearance: none;
+  border: none;
+  background-size: auto;
+
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  -webkit-animation-name: spin;
+  animation-name: spin;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}

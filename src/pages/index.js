@@ -1,22 +1,25 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import StatusChecker from '../components/StatusChecker'
+import Layout from '../components/Templates/Layout'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const IndexPage = () => {
+  return (
+    <Layout pageTitle={null}>
+      <main>
+        <h1 className="gg-t-megaphone">giffgaff status</h1>
+        <p className="gg-t-speak">
+          Check the status of giffgaff easily from one page. This site updates regularly to make sure you're not missing any of the latest
+          issues.
+        </p>
+        <p className="gg-t-speak">
+          This page uses multiple sources to compile a large set of data to inform you about any problems with giffgaff or O2's infrastructure.
+        </p>
+        <p className="gg-t-whisper">This is an unofficial site made by the giffgaff community.</p>
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+        <StatusChecker />
+      </main>
+    </Layout>
+  )
+}
 
 export default IndexPage

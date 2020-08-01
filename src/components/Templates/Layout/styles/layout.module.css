@@ -1,0 +1,16 @@
+.mainContent {
+  max-width: 768px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  flex: 1;
+}
+.mainContent h1,
+.mainContent h2,
+.mainContent h3,
+.mainContent h4,
+.mainContent h5,
+.mainContent h6,
+.mainContent p {
+  margin-bottom: 0.5em;
+}
