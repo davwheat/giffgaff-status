@@ -13,3 +13,26 @@
 .about p {
   padding-bottom: 4px;
 }
+.nav {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav a {
+  padding: 8px 16px;
+  text-decoration: none;
+  display: inline-block;
+  border-right: 1px #ccc solid;
+  transition: all 0.2s ease-out;
+}
+.nav a:first-child {
+  border-left: 1px solid #ccc;
+}
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+}

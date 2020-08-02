@@ -5,19 +5,62 @@
 }
 .listItem {
   list-style: none;
-  transition: all 0.2s ease-out;
   background: #fff;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+  position: relative;
 }
-.listItem[data-severity='-1'] {
+.listItem::after,
+.listItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.listItem::before {
+  border: 2px solid #000;
+  z-index: -1;
+  background-color: #fff;
+}
+.listItem::after {
+  will-change: transform;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease;
+  z-index: -2;
+  box-shadow: 4px 4px #000;
+}
+@media (hover) {
+  .listItem::after {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+.listItem .item {
+  transition: all 0.2s ease-in-out;
+}
+.listItem[data-severity='-1'] .item {
   opacity: 0.5;
 }
-.listItem[data-severity='-1']:hover {
+.listItem[data-severity='-1'] .item:hover,
+.listItem[data-severity='-1'] .item:focus,
+.listItem[data-severity='-1'] .item:active {
   opacity: 1;
+}
+.listItem[data-severity='0'] .item:hover,
+.listItem[data-severity='0'] .item:focus,
+.listItem[data-severity='0'] .item:active {
+  border-color: #666;
 }
 .listItem[data-severity='1'] .item {
   border-color: #fcc31e;
   border-width: 4px;
   background-color: #fef3d2;
+}
+.listItem[data-severity='1'] .item:hover,
+.listItem[data-severity='1'] .item:focus,
+.listItem[data-severity='1'] .item:active {
+  opacity: 0.8;
 }
 .listItem[data-severity='2'] .item {
   border-color: #fc821e;

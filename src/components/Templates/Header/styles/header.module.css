@@ -27,7 +27,9 @@
   height: 56px;
   display: inline-block;
 }
-.nav a:any-link:hover {
+.nav a:any-link:hover,
+.nav a:any-link:focus,
+.nav a:any-link:active {
   background-color: #fff;
   color: #000;
 }

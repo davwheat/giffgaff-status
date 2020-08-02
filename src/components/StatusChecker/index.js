@@ -7,6 +7,7 @@ import LoadingIcon from '../giffgaff/LoadingIcon'
 import StatusTable from './StatusTable'
 
 import styles from './styles/StyleChecker.module.css'
+import getDiscussionSeverity from '../../utils/getDiscussionSeverity'
 
 export default function StatusChecker() {
   const [allServiceUpdates, setAllServiceUpdates] = useState(null)
@@ -51,10 +52,40 @@ export default function StatusChecker() {
     )
   }
 
+  let issueList =
+    allServiceUpdates &&
+    allServiceUpdates.reduce((arr, issue) => {
+      return [...arr, { id: issue.id, title: issue.attributes.title, severity: getDiscussionSeverity(issue) }]
+    }, [])
+
+  const highestSeverity = issueList && Math.max(...issueList.map(i => i.severity))
+
+  let completeMsg = ''
+  let completedAlertType = 'success'
+
+  if (highestSeverity === -1) {
+    completeMsg = "There's nothing of interest at the moment."
+  } else if (highestSeverity === 0) {
+    completeMsg = "There's a few thing you might want to be aware of, but nothing that affects most members."
+  } else if (highestSeverity === 1) {
+    completedAlertType = 'info'
+    completeMsg = "There's an issue you should keep your eye on."
+  } else if (highestSeverity === 2) {
+    completedAlertType = 'warning'
+    completeMsg = "There's something going on at giffgaff."
+  } else if (highestSeverity === 3) {
+    completedAlertType = 'error'
+    completeMsg = "There's a major issue at giffgaff."
+  } else {
+    completeMsg = "I'm not sure what's going on..."
+  }
+
   return (
     <section className={styles.statusSection}>
       {Object.values(checksComplete).every(check => check) ? (
-        <MinorAlert type="success" title="Checks complete" />
+        <MinorAlert type={completedAlertType} title="Checks complete">
+          {completeMsg}
+        </MinorAlert>
       ) : (
         <MinorAlert
           type="plain"
@@ -63,7 +94,7 @@ export default function StatusChecker() {
         />
       )}
 
-      {allServiceUpdates && <StatusTable serviceIssueDiscussions={allServiceUpdates} />}
+      {allServiceUpdates && <StatusTable issueList={issueList} />}
     </section>
   )
 }

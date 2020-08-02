@@ -17,3 +17,32 @@
     padding-bottom: 4px;
   }
 }
+
+.nav {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  a {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: inline-block;
+
+    border-right: 1px #ccc solid;
+
+    transition: all 0.2s ease-out;
+
+    &:first-child {
+      border-left: 1px solid #ccc;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: #fff;
+      color: #000;
+      border-color: #000;
+    }
+  }
+}

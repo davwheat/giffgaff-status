@@ -1,5 +1,5 @@
 import React from 'react'
-import StatusChecker from '../components/StatusChecker'
+
 import Layout from '../components/Templates/Layout'
 import Link from '../components/Links/Link'
 
