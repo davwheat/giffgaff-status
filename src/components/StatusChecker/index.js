@@ -6,8 +6,9 @@ import MinorAlert from '../giffgaff/MinorAlert'
 import LoadingIcon from '../giffgaff/LoadingIcon'
 import StatusTable from './StatusTable'
 
-import styles from './styles/StyleChecker.module.css'
+import styles from './styles/StatusChecker.module.css'
 import getDiscussionSeverity from '../../utils/getDiscussionSeverity'
+import NotSolved from './NotSOlved'
 
 export default function StatusChecker() {
   const [allServiceUpdates, setAllServiceUpdates] = useState(null)
@@ -93,6 +94,8 @@ export default function StatusChecker() {
           title="Checking for issues at giffgaff..."
         />
       )}
+
+      {allServiceUpdates && <NotSolved />}
 
       {allServiceUpdates && <StatusTable issueList={issueList} />}
     </section>

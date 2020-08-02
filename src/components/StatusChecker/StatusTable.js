@@ -9,24 +9,25 @@ export default function StatusTable({ issueList }) {
   issueList.sort((a, b) => b.severity - a.severity)
 
   return (
-    <section className={styles.container}>
-      <ul>
-        {issueList.map(issue => (
-          <li data-severity={issue.severity} className={styles.listItem} key={issue.id}>
-            <a
-              className={styles.item}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://community.giffgaff.com/d/${issue.id}?utm_source=giffgaffstatus_com_mrjeeves`}
-            >
-              <h1 className="gg-t-speak-up">{issue.title}</h1>
-              {/* <p>Thread ID: {issue.id}</p> */}
-              <p>{severityToText(issue.severity)}</p>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <section className={styles.container}>
+        <ul>
+          {issueList.map(issue => (
+            <li data-severity={issue.severity} className={styles.listItem} key={issue.id}>
+              <a
+                className={styles.item}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://community.giffgaff.com/d/${issue.id}?utm_source=giffgaffstatus_com_mrjeeves`}
+              >
+                <h1 className="gg-t-speak-up">{issue.title}</h1>
+                <p>{severityToText(issue.severity)}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   )
 }
 

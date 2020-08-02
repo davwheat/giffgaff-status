@@ -1,3 +1,65 @@
 @import './baseline.less';
 
 @import './typography.less';
+
+.no-button-styles {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: currentColor;
+}
+
+.gg-link {
+  text-decoration: underline;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gg-link-button {
+  .no-button-styles();
+  text-decoration: underline;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gg-link--arrow {
+  &::after {
+    content: ' ▸';
+  }
+}
+
+.gg-c-list-ordered {
+  margin-top: 16px;
+  margin-left: 8px;
+  counter-reset: ordered-list;
+  list-style: none;
+}
+
+.gg-c-list-ordered > li:before {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  counter-increment: ordered-list;
+  content: counter(ordered-list);
+  background-color: #000;
+  color: #fff;
+  min-width: 24px;
+  height: 24px;
+  padding: 1px 4px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.gg-c-list-ordered > li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 32px;
+}
