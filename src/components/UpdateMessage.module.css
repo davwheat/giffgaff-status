@@ -1,0 +1,37 @@
+.alert {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background-color: #00528a;
+  border-top: 2px solid #000;
+  animation: slide-in 0.4s ease-out;
+  color: #fff;
+  padding: 16px 24px;
+}
+@media (min-width: 580px) {
+  .alert {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.button {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-decoration: underline;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
