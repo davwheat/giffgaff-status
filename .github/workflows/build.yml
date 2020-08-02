@@ -1,0 +1,56 @@
+name: Build & Deploy
+
+on: [ push, pull_request ]
+
+jobs:
+  skip_ci_test:
+    name: Commit check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for CI Skip
+        if: "contains(github.event.head_commit.message, '[ci skip]')"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: return 1
+
+  build:
+    name: node ${{ matrix.node_version }}; ${{ matrix.os }}
+    needs: skip_ci_test
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [12, 13]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+
+      - name: Gatsby build
+        run: |
+          yarn build
+        env:
+          CI: true
