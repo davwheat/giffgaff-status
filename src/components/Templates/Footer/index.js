@@ -9,6 +9,11 @@ export default function Footer() {
         <section className={styles.about}>
           <p className="gg-t-speak-up">&copy; {new Date().getFullYear()} David Wheatley</p>
           <p className="gg-t-whisper">
+            <a href="https://github.com/davwheat/giffgaff-status" rel="noopener noreferrer">
+              View this site on GitHub
+            </a>
+          </p>
+          <p className="gg-t-whisper">
             This page is run by a member of the giffgaff community and does not represent the views or opinions of giffgaff Limited, nor its
             staff. giffgaff is the registered trademark of giffgaff Limited.
           </p>

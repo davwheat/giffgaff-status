@@ -32,11 +32,28 @@
     transition: transform 0.2s ease-in-out, opacity 0.2s ease;
     z-index: -2;
     box-shadow: 4px 4px #000;
+  }
 
-    @media (hover) {
+  @media (hover) {
+    &::after {
       opacity: 0;
       transform: scale(0.9);
     }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    transform: scale(1.01);
+    // -webkit-text-stroke: 0.45px;
   }
 
   .item {
@@ -44,26 +61,34 @@
   }
 
   &[data-severity='-1'] {
+    &,
+    .item,
+    &::before {
+      border-color: #666;
+    }
+
     .item {
-      opacity: 0.5;
+      opacity: 0.65;
 
       &:hover,
       &:focus,
       &:active {
         opacity: 1;
+
+        border-color: #000;
       }
     }
   }
 
-  &[data-severity='0'] {
-    .item {
-      &:hover,
-      &:focus,
-      &:active {
-        border-color: #666;
-      }
-    }
-  }
+  // &[data-severity='0'] {
+  //   .item {
+  //     &:hover,
+  //     &:focus,
+  //     &:active {
+  //       border-color: #666;
+  //     }
+  //   }
+  // }
 
   &[data-severity='1'] {
     .item {
@@ -96,7 +121,7 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 }
 
