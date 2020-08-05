@@ -8,7 +8,7 @@ import StatusTable from './StatusTable'
 
 import styles from './styles/StatusChecker.module.css'
 import getDiscussionSeverity from '../../utils/getDiscussionSeverity'
-import NotSolved from './NotSOlved'
+import NotSolved from './NotSolved'
 
 export default function StatusChecker() {
   const [allServiceUpdates, setAllServiceUpdates] = useState(null)
