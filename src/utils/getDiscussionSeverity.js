@@ -7,7 +7,7 @@ export default function getDiscussionSeverity(discussion) {
 
   if (title.toLowerCase().includes('resolved')) {
     // thread likely resolved
-    severity -= 5
+    severity -= 12
   }
 
   if (title.toLowerCase().includes('planned')) {
