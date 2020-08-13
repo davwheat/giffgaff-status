@@ -3,14 +3,14 @@ export default function getDiscussionSeverity(discussion) {
   const createdAt = new Date(discussion.attributes.createdAt)
   //   const hasBA = discussion.attributes.hasBestAnswer
 
-  let severity = 1
+  let severity = 0
 
-  if (title.toLowerCase().includes('resolved')) {
+  if (title.match(/(resolved)/gi)) {
     // thread likely resolved
     severity -= 12
   }
 
-  if (title.toLowerCase().includes('planned')) {
+  if (title.match(/(planned)/gi)) {
     // planned maintenance
     severity -= 2
   }
@@ -38,6 +38,9 @@ export default function getDiscussionSeverity(discussion) {
   if (title.match(/(nationwide)/gi)) {
     // possible nationwide outage
     severity += 3
+  } else if (title.match(/(region|area)/gi)) {
+    // limited to one area/region
+    severity -= 2
   }
 
   if (severity < -4) {
