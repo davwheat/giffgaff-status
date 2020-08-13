@@ -1,11 +1,3 @@
-.mainContent {
-  max-width: 768px;
-  margin: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  flex: 1;
-  width: 100%;
-}
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,
@@ -15,3 +7,4 @@
 .mainContent p {
   margin-bottom: 0.5em;
 }
+/*# sourceMappingURL=layout.module.css.map */

@@ -1,0 +1,20 @@
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.mainContent {
+  max-width: 768px;
+  margin: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  flex: 1;
+  width: 100%;
+}
+/*# sourceMappingURL=non-embed.module.css.map */

@@ -8,8 +8,9 @@ import Footer from '../Footer'
 import Header from '../Header'
 import './styles/layout.css'
 import styles from './styles/layout.module.css'
+import clsx from 'clsx'
 
-const Layout = ({ children, pageTitle }) => {
+const Layout = ({ children, pageTitle, embedded }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -20,13 +21,19 @@ const Layout = ({ children, pageTitle }) => {
     }
   `)
 
+  let extraStyles
+
+  if (!embedded) {
+    extraStyles = require('./styles/non-embed.module.css')
+  }
+
   return (
     <>
       <SEO title={pageTitle} />
       <UpdateMessage />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main className={styles.mainContent}>{children}</main>
-      <Footer />
+      {!embedded && <Header siteTitle={data.site.siteMetadata.title} />}
+      <main className={clsx(styles.mainContent, [!embedded && extraStyles.mainContent])}>{children}</main>
+      {!embedded && <Footer />}
     </>
   )
 }
@@ -34,6 +41,11 @@ const Layout = ({ children, pageTitle }) => {
 Layout.propTypes = {
   pageTitle: PropTypes.string,
   children: PropTypes.node.isRequired,
+  embedded: PropTypes.bool,
+}
+
+Layout.defaultProps = {
+  embedded: false,
 }
 
 export default Layout
