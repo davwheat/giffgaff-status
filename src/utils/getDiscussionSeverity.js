@@ -30,7 +30,7 @@ export default function getDiscussionSeverity(discussion) {
     severity += 2
   }
 
-  if (title.match(/(calls|texts).*(calls|texts)/gi)) {
+  if (title.match(/\w(calls|texts|voice)\w/gi)) {
     // possible calls & texts outage
     severity += 1
   }
