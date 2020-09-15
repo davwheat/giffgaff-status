@@ -45,7 +45,7 @@ export default function StatusChecker() {
       window.removeEventListener('online', GoneOnline)
       window.removeEventListener('offline', GoneOffline)
     }
-  }, [allServiceUpdates, setAllServiceUpdates])
+  }, [isOnline, allServiceUpdates, setAllServiceUpdates])
 
   if (!isOnline) {
     return (
