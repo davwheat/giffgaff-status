@@ -16,6 +16,7 @@ export default function MinorAlert(props) {
         [type === 'info' && styles.info],
         [type === 'warning' && styles.warning],
         [type === 'success' && styles.success],
+        [type === 'unknown' && styles.bland],
         [type === 'plain' && styles.bland]
       )}
     >
