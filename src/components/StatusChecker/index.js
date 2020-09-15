@@ -96,8 +96,10 @@ export default function StatusChecker() {
         <MinorAlert
           type="plain"
           customIcon={<LoadingIcon style={{ margin: 6, width: 36, height: 36, borderWidth: 4, marginRight: 6 + 12 }} />}
-          title="Checking for issues at giffgaff. Don't worry, this can take up to a minute."
-        />
+          title="Checking for issues at giffgaff."
+        >
+          Don't worry, this can take up to a minute.
+        </MinorAlert>
       )}
 
       {allServiceUpdates && <NotSolved />}
