@@ -17,6 +17,10 @@ export default function StatusChecker() {
   const [isOnline, setIsOnline] = useState(true)
 
   useEffect(() => {
+    if (isOnline && !navigator.onLine) {
+      setIsOnline(false)
+    }
+
     function GoneOffline() {
       setIsOnline(false)
       console.log('offline')
@@ -78,6 +82,7 @@ export default function StatusChecker() {
     completedAlertType = 'error'
     completeMsg = "There's a major issue at giffgaff."
   } else {
+    completedAlertType = 'unknown'
     completeMsg = "I'm not sure what's going on..."
   }
 
@@ -91,7 +96,7 @@ export default function StatusChecker() {
         <MinorAlert
           type="plain"
           customIcon={<LoadingIcon style={{ margin: 6, width: 36, height: 36, borderWidth: 4, marginRight: 6 + 12 }} />}
-          title="Checking for issues at giffgaff..."
+          title="Checking for issues at giffgaff. Don't worry, this can take up to a minute."
         />
       )}
 
