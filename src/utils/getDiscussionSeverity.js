@@ -22,23 +22,23 @@ export default function getDiscussionSeverity(discussion) {
 
   if (getAgeInDays(createdAt) <= 2) {
     // thread less than 2 days old
-    severity += 2
+    severity += 1
   }
 
   if (title.match(/(4G|3G|2G|data)/gi)) {
     // possible data outage
-    severity += 3
+    severity += 2
   }
 
   if (title.match(/(calls|texts).*(calls|texts)/gi)) {
     // possible calls & texts outage
-    severity += 2
+    severity += 1
   }
 
   if (title.match(/(nationwide)/gi)) {
     // possible nationwide outage
     severity += 3
-  } else if (title.match(/(region|area)/gi)) {
+  } else if (title.match(/\w(region|area|in)\w/gi)) {
     // limited to one area/region
     severity -= 2
   }
