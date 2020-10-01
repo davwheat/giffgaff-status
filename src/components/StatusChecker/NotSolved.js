@@ -18,7 +18,7 @@ export default function NotSolved() {
       </button>
       {checkStatusModalOpen && (
         <Modal
-          title="Trouble?"
+          title="Need more help?"
           onClose={() => {
             setCheckStatusModalOpen(false)
           }}
