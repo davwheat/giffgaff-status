@@ -69,18 +69,18 @@ export default function StatusChecker() {
   let completedAlertType = 'success'
 
   if (highestSeverity === -1) {
-    completeMsg = "There's nothing of interest at the moment."
+    completeMsg = "Everything's running smoothly."
   } else if (highestSeverity === 0) {
-    completeMsg = "There's a few thing you might want to be aware of, but nothing that affects most members."
+    completeMsg = "There's a small, localised issue. Most people aren't affected."
   } else if (highestSeverity === 1) {
     completedAlertType = 'info'
-    completeMsg = "There's an issue you should keep your eye on."
+    completeMsg = "There's a minor issue or outage."
   } else if (highestSeverity === 2) {
     completedAlertType = 'warning'
-    completeMsg = "There's something going on at giffgaff."
+    completeMsg = "There's a widespread issue at giffgaff."
   } else if (highestSeverity === 3) {
     completedAlertType = 'error'
-    completeMsg = "There's a major issue at giffgaff."
+    completeMsg = "There's a nationwide, critical issue at giffgaff."
   } else {
     completedAlertType = 'unknown'
     completeMsg = "I'm not sure what's going on..."
