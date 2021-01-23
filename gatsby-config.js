@@ -1,3 +1,26 @@
+/* eslint-disable */
+
+const __IS_DEV__ = process.env.NODE_ENV !== 'production'
+
+// These plugins will only be used in production builds
+const prodPlugins = !__IS_DEV__
+  ? [
+      // {
+      //   resolve: `gatsby-plugin-google-analytics-gdpr`,
+      //   options: {
+      //     // The property ID; the tracking code won't be generated without it.
+      //     trackingId: 'UA-20362245-9',
+      //   },
+      // },
+      {
+        resolve: 'gatsby-plugin-remove-console',
+        options: {
+          exclude: ['error', 'warn'],
+        },
+      },
+    ]
+  : []
+
 const workboxConfig = {
   runtimeCaching: [
     {
@@ -29,7 +52,9 @@ module.exports = {
     author: `@davwheat`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    ...prodPlugins,
+    `gatsby-plugin-preact`,
+    `gatsby-plugin-react-head`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -49,5 +74,9 @@ module.exports = {
         workboxConfig,
       },
     },
+    `gatsby-plugin-less`,
+    `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-plugin-webpack-size`,
   ],
 }
