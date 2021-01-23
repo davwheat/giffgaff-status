@@ -71,19 +71,19 @@ export default function StatusChecker() {
   if (highestSeverity === -1) {
     completeMsg = "Everything's running smoothly."
   } else if (highestSeverity === 0) {
-    completeMsg = "There's a small, localised issue. Most people aren't affected."
+    completeMsg = "There's one or more small, localised issues. Most people aren't affected."
   } else if (highestSeverity === 1) {
     completedAlertType = 'info'
-    completeMsg = "There's a minor issue or outage."
+    completeMsg = "There's one or more minor issues or outages."
   } else if (highestSeverity === 2) {
     completedAlertType = 'warning'
-    completeMsg = "There's a widespread issue at giffgaff."
+    completeMsg = "There's one or more widespread issues at giffgaff."
   } else if (highestSeverity === 3) {
     completedAlertType = 'error'
-    completeMsg = "There's a nationwide, critical issue at giffgaff."
+    completeMsg = "There's one or more critical issues at giffgaff."
   } else {
     completedAlertType = 'unknown'
-    completeMsg = "I'm not sure what's going on..."
+    completeMsg = "Couldn't check status. Please contact @davwheat_ on Twitter."
   }
 
   return (
@@ -98,7 +98,7 @@ export default function StatusChecker() {
           customIcon={<LoadingIcon style={{ margin: 6, width: 36, height: 36, borderWidth: 4, marginRight: 6 + 12 }} />}
           title="Checking for issues at giffgaff."
         >
-          Don't worry, this can take up to a minute.
+          Sit tight. This can take up to a minute.
         </MinorAlert>
       )}
 
