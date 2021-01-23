@@ -3,7 +3,7 @@ name: Smoketest
 on:
   push:
     branches:
-      - 'master'
+      - "*"
   pull_request:
 
 jobs:
