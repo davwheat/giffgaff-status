@@ -1,7 +1,7 @@
 import React from 'react'
 import { PortalWithState } from 'react-portal'
 
-import styles from './styles/Modal.module.css'
+import styles from './styles/Modal.module.less'
 import clsx from 'clsx'
 
 export default function Modal({ children, title, onClose }) {
@@ -21,7 +21,7 @@ export default function Modal({ children, title, onClose }) {
                   <header className={clsx(styles.dialogHeader, 'gg-t-louder')}>
                     <h1 className={styles.dialogTitle}>{title}</h1>
                     <button
-                      onClick={() => closePortal()}
+                      onClick={closePortal}
                       aria-label="Close modal"
                       className={clsx(styles.dialogCloseButton, 'no-button-styles')}
                     >

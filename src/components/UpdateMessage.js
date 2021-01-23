@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './UpdateMessage.module.css'
+import styles from './UpdateMessage.module.less'
 
 // Check for updates every 15 minutes
 const UPDATE_CHECKING_INTERVAL = 15 * 60 * 1000
