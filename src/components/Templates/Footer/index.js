@@ -14,8 +14,8 @@ export default function Footer() {
             </a>
           </p>
           <p className="gg-t-whisper">
-            This page is run by a member of the giffgaff community and does not represent the views or opinions of giffgaff Limited, nor its
-            staff. giffgaff is the registered trademark of giffgaff Limited.
+            This page is run by a member of the giffgaff community and does not represent the views or opinions of giffgaff Limited, nor its staff. giffgaff is
+            the registered trademark of giffgaff Limited.
           </p>
         </section>
         <nav className={styles.nav}>

@@ -17,7 +17,7 @@ export default function MinorAlert(props) {
         [type === 'warning' && styles.warning],
         [type === 'success' && styles.success],
         [type === 'unknown' && styles.bland],
-        [type === 'plain' && styles.bland]
+        [type === 'plain' && styles.bland],
       )}
     >
       {!noIcon && (customIcon ? customIcon : <div className={styles.icon} />)}
