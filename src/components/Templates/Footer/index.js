@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './styles/footer.module.css'
+import styles from './styles/footer.module.less'
 
 export default function Footer() {
   return (

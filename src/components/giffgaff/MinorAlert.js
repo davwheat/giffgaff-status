@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import clsx from 'clsx'
 
-import styles from './styles/MinorAlert.module.css'
+import styles from './styles/MinorAlert.module.less'
 
 export default function MinorAlert(props) {
   const { type, title, children, noIcon, customIcon } = props

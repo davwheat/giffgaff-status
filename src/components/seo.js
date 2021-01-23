@@ -29,16 +29,16 @@ function SEO({ description, lang, meta, title }) {
   return (
     <>
       <Title>{title}</Title>
-      <Meta name="og:title">{title}</Meta>
-      <Meta name="twitter:title">{title}</Meta>
+      <Meta name="og:title" content={title} />
+      <Meta name="twitter:title" content={title} />
 
-      <Meta name="description">{metaDescription}</Meta>
-      <Meta name="og:description">{metaDescription}</Meta>
-      <Meta name="twitter:description">{metaDescription}</Meta>
+      <Meta name="description" content={metaDescription} />
+      <Meta name="og:description" content={metaDescription} />
+      <Meta name="twitter:description" content={metaDescription} />
 
-      <Meta name="og:type">website</Meta>
-      <Meta name="twitter:card">summary</Meta>
-      <Meta name="twitter:creator">@davwheat_</Meta>
+      <Meta name="og:type" content="website" />
+      <Meta name="twitter:card" content="summary" />
+      <Meta name="twitter:creator" content="@davwheat_" />
     </>
   )
 }
