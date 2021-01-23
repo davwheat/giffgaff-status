@@ -6,7 +6,7 @@ import MinorAlert from '../giffgaff/MinorAlert'
 import LoadingIcon from '../giffgaff/LoadingIcon'
 import StatusTable from './StatusTable'
 
-import styles from './styles/StatusChecker.module.css'
+import styles from './styles/StatusChecker.module.less'
 import getDiscussionSeverity from '../../utils/getDiscussionSeverity'
 import NotSolved from './NotSolved'
 

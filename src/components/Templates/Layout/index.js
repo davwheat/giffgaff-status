@@ -1,13 +1,17 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
+import PropTypes from 'prop-types'
+
+import { graphql, useStaticQuery } from 'gatsby'
+import clsx from 'clsx'
+
 import SEO from '../../seo'
 import UpdateMessage from '../../UpdateMessage'
 import Footer from '../Footer'
 import Header from '../Header'
-import './styles/layout.css'
-import styles from './styles/layout.module.css'
-import clsx from 'clsx'
+
+import './styles/layout.less'
+import styles from './styles/layout.module.less'
+
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/700.css'
 
@@ -25,7 +29,7 @@ const Layout = ({ children, pageTitle, embedded }) => {
   let extraStyles
 
   if (!embedded) {
-    extraStyles = require('./styles/non-embed.module.css')
+    extraStyles = require('./styles/non-embed.module.less')
   }
 
   return (
