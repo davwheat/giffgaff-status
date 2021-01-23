@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import 'typeface-poppins'
 import SEO from '../../seo'
 import UpdateMessage from '../../UpdateMessage'
 import Footer from '../Footer'
@@ -9,6 +8,8 @@ import Header from '../Header'
 import './styles/layout.css'
 import styles from './styles/layout.module.css'
 import clsx from 'clsx'
+import '@fontsource/poppins/400.css'
+import '@fontsource/poppins/700.css'
 
 const Layout = ({ children, pageTitle, embedded }) => {
   const data = useStaticQuery(graphql`
