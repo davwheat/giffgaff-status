@@ -1,6 +1,6 @@
 export default async function getAllServiceUpdates() {
   const exemptIds = [
-    '17357121', // Found an unreported service issue?discussion.id
+    '17357121', // Found an unreported service issue?
   ]
 
   let threads = null
