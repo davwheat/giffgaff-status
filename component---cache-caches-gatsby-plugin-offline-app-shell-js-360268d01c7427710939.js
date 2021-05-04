@@ -1,0 +1,2 @@
+(self.webpackChunkgiffgaff_status=self.webpackChunkgiffgaff_status||[]).push([[306],{1930:function(t,e,u){"use strict";var f=u(5318);e.__esModule=!0,e.default=void 0;var n=f(u(5354)),a=f(u(5007)),r=function(t){function e(){return t.apply(this,arguments)||this}return(0,n.default)(e,t),e.prototype.render=function(){return a.default.createElement(a.default.Fragment,null)},e}(a.default.Component);e.default=r}}]);
+//# sourceMappingURL=component---cache-caches-gatsby-plugin-offline-app-shell-js-360268d01c7427710939.js.map
