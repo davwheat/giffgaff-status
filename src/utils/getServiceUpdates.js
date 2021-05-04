@@ -8,7 +8,7 @@ export default async function getAllServiceUpdates() {
   try {
     threads = await (
       await fetch(
-        'https://cors-anywhere.davwheat.dev/?https://community.giffgaff.com/api/discussions?include=user%2ClastPostedUser%2Ctags%2CfirstPost%2CrecipientUsers%2CrecipientGroups%2Cpoll&filter%5Bq%5D=%20tag%3Aservice-updates&sort=-createdAt',
+        'https://cors-anywhere.davwheat.workers.dev/?https://community.giffgaff.com/api/discussions?include=firstPost&filter%5Bq%5D=%20tag%3Aservice-updates&sort=-createdAt',
       )
     ).json()
   } catch (e) {
