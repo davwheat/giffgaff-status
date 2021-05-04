@@ -10,7 +10,7 @@ import Footer from '../Footer'
 import Header from '../Header'
 
 import './styles/layout.less'
-import styles from './styles/layout.module.less'
+import * as styles from './styles/layout.module.less'
 
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/700.css'

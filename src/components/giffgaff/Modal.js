@@ -1,7 +1,7 @@
 import React from 'react'
 import { PortalWithState } from 'react-portal'
 
-import styles from './styles/Modal.module.less'
+import * as styles from './styles/Modal.module.less'
 import clsx from 'clsx'
 
 export default function Modal({ children, title, onClose }) {

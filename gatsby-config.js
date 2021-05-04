@@ -55,6 +55,7 @@ module.exports = {
     ...prodPlugins,
     `gatsby-plugin-preact`,
     `gatsby-plugin-react-head`,
+    `gatsby-plugin-less`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -74,8 +75,6 @@ module.exports = {
         workboxConfig,
       },
     },
-    `gatsby-plugin-less`,
-    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-webpack-size`,
   ],

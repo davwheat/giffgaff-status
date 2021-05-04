@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from './styles/NotSolved.module.less'
+import * as styles from './styles/NotSolved.module.less'
 import Modal from '../giffgaff/Modal'
 
 export default function NotSolved() {

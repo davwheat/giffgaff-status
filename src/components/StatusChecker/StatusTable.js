@@ -3,7 +3,7 @@ import React from 'react'
 
 import severityToText from '../../utils/severityToText'
 
-import styles from './styles/StatusTable.module.less'
+import * as styles from './styles/StatusTable.module.less'
 
 export default function StatusTable({ issueList }) {
   issueList.sort((a, b) => b.severity - a.severity)

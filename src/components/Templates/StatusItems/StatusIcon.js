@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import clsx from 'clsx'
 
-import styles from './styles/StatusIcon.module.less'
+import * as styles from './styles/StatusIcon.module.less'
 
 export default function StatusIcon({ outageSeverity }) {
   const { green, amber, red } = styles
